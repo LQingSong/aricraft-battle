@@ -3,7 +3,9 @@
  */
 import { Container, Text, Sprite, Texture } from "pixi.js";
 import { Component, createRenderer } from "vue";
-
+interface myContainer extends Container {
+  [key: string]: any;
+}
 const renderer = createRenderer<Container, Container>({
   createElement(type) {
     // Container
@@ -20,13 +22,13 @@ const renderer = createRenderer<Container, Container>({
     }
     return element;
   },
-  patchProp(el, key, preValue, nextValue) {
+  patchProp(el: myContainer, key, preValue, nextValue) {
     switch (key) {
       case "texture":
         (el as Sprite).texture = Texture.from(nextValue);
         break;
-
       default:
+        el[key] = nextValue;
         break;
     }
   },

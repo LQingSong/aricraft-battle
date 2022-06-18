@@ -32,6 +32,10 @@
 1. pnpm i pixi.js 安装 pixi.js
 2. 编写 custom renderer 接口
 
+3. 渲染飞机组件
+4. 飞机物理逻辑和 UI 分离
+   1. 要使用 node js ,安装@types/node
+
 ## 错误记录
 
 1. ts 引入图片报红：ts 无法识别非代码资源
@@ -46,4 +50,5 @@
    declare module "*.tiff";
    ```
    亲测并没什么效果
-2. vue3 用 volar，禁用 vetur
+2. 打开 volar 重启 vscode 图片报错问题解决
+3. vue3 用 volar，禁用 vetur
